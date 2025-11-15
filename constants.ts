@@ -53,15 +53,6 @@ export const PROJECTS: Project[] = [
     content: {} as any,
   },
   {
-    name: 'codebase-mcp-tool',
-    displayName: 'Codebase MCP Tool',
-    description: 'A utility for managing and analyzing codebases with multi-code-path (MCP) execution in Go.',
-    repoUrl: 'https://github.com/Protocol-Lattice/codebase-mcp-tool',
-    tags: ['Go', 'MCP', 'Tools', 'AI'],
-    isFeatured: false,
-    content: {} as any,
-  },
-  {
     name: 'memory-bank-mcp',
     displayName: 'Memory Bank MCP',
     description: 'A structured memory system for Go agents, supporting multi-vector embeddings and persistence for complex reasoning.',
