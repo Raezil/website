@@ -101,7 +101,12 @@ function HomePage() {
                   padding: 'var(--spacing-xl)'
                 }}>
                   <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-                    {Icon && <Icon className="h-14 w-14 flex-shrink-0 transition-all duration-300 group-hover:scale-110" style={{ color: 'hsl(var(--color-accent-purple))' }} />}
+                    <img
+                      src="/utcp.png"
+                      alt={collab.name + " logo"}
+                      className="h-14 w-14 flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+                      style={{ color: 'hsl(var(--color-accent-purple))' }}
+                    />
                     <div className="flex-grow">
                       <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'var(--font-mono)' }}>{collab.name}</h3>
                       <p style={{ color: 'hsl(var(--color-text-secondary))' }}>{collab.description}</p>
