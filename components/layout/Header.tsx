@@ -10,18 +10,22 @@ function Header() {
     const { setCommandPaletteOpen } = useTheme();
 
     return (
-        <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur-sm">
+        <header className="sticky top-0 z-40 w-full border-b glass" style={{ borderColor: 'hsla(var(--color-border-subtle), 0.6)' }}>
             <div className="container mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
-                <a href="/#" className="flex items-center space-x-3">
-                    <Icons.logo className="h-6 w-6" />
-                    <span className="font-bold">{COMPANY_INFO.name}</span>
+                <a href="/#" className="flex items-center space-x-3 group">
+                    <img
+                        src="/logo.png"
+                        alt="Protocol Lattice Logo"
+                        className="h-8 w-8 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+                    />
+                    <span className="font-bold text-lg gradient-text" style={{ fontFamily: 'var(--font-display)' }}>{COMPANY_INFO.name}</span>
                 </a>
-                <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
+                <nav className="hidden items-center space-x-2 text-sm font-medium md:flex">
                     {NAV_ITEMS.map((item) => (
-                        <a 
-                            key={item.href} 
-                            href={item.href} 
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
+                        <a
+                            key={item.href}
+                            href={item.href}
+                            className="nav-link"
                         >
                             {item.label}
                         </a>

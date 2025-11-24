@@ -1,0 +1,531 @@
+/* ============================================
+   PROTOCOL LATTICE - DESIGN SYSTEM
+   A premium, modern design for the future of AI
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ============================================
+   CSS RESET & BASE
+   ============================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* ============================================
+     COLOR PALETTE - Vibrant & Modern
+     ============================================ */
+
+    /* Primary Brand Colors */
+    --color-primary: 270 95% 70%;
+    --color-primary-dark: 270 80% 55%;
+    --color-primary-light: 270 100% 85%;
+
+    /* Accent Colors */
+    --color-accent-purple: 270 95% 70%;
+    --color-accent-blue: 220 95% 65%;
+    --color-accent-cyan: 190 95% 60%;
+    --color-accent-pink: 330 85% 70%;
+
+    /* Background Colors */
+    --color-bg-primary: 240 15% 4%;
+    --color-bg-secondary: 240 12% 8%;
+    --color-bg-tertiary: 240 10% 12%;
+    --color-bg-elevated: 240 8% 16%;
+
+    /* Text Colors */
+    --color-text-primary: 0 0% 98%;
+    --color-text-secondary: 240 5% 75%;
+    --color-text-muted: 240 5% 55%;
+    --color-text-inverse: 240 10% 10%;
+
+    /* Border Colors */
+    --color-border-subtle: 240 10% 18%;
+    --color-border-default: 240 8% 25%;
+    --color-border-strong: 240 6% 35%;
+
+    /* Semantic Colors */
+    --color-success: 150 80% 55%;
+    --color-warning: 45 95% 60%;
+    --color-error: 0 85% 65%;
+    --color-info: 210 90% 60%;
+
+    /* ============================================
+     SPACING SYSTEM
+     ============================================ */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+
+    /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Space Grotesk', var(--font-sans);
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+    /* ============================================
+     ANIMATIONS & TRANSITIONS
+     ============================================ */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* ============================================
+     EFFECTS
+     ============================================ */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+
+    --glow-purple: 0 0 20px hsla(var(--color-accent-purple), 0.3);
+    --glow-blue: 0 0 20px hsla(var(--color-accent-blue), 0.3);
+    --glow-cyan: 0 0 20px hsla(var(--color-accent-cyan), 0.3);
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 9999px;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: hsl(var(--color-bg-primary));
+    color: hsl(var(--color-text-primary));
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   GRADIENT BACKGROUNDS
+   ============================================ */
+.gradient-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 20%, hsla(var(--color-accent-purple), 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, hsla(var(--color-accent-blue), 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, hsla(var(--color-accent-cyan), 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ============================================
+   GLASS MORPHISM
+   ============================================ */
+.glass {
+    background: hsla(var(--color-bg-secondary), 0.6);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid hsla(var(--color-border-subtle), 0.6);
+}
+
+.glass-strong {
+    background: hsla(var(--color-bg-elevated), 0.8);
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    border: 1px solid hsla(var(--color-border-default), 0.8);
+}
+
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
+.gradient-text {
+    background: linear-gradient(135deg,
+            hsl(var(--color-accent-purple)) 0%,
+            hsl(var(--color-accent-blue)) 50%,
+            hsl(var(--color-accent-cyan)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ============================================
+   HOVER EFFECTS
+   ============================================ */
+.hover-lift {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.hover-glow {
+    transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.hover-glow:hover {
+    box-shadow: var(--glow-purple);
+    border-color: hsla(var(--color-accent-purple), 0.5);
+}
+
+/* ============================================
+   CARDS & CONTAINERS
+   ============================================ */
+.card {
+    background: hsl(var(--color-bg-secondary));
+    border: 1px solid hsl(var(--color-border-subtle));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: hsl(var(--color-border-default));
+    box-shadow: var(--shadow-lg);
+}
+
+.card-elevated {
+    background: hsl(var(--color-bg-elevated));
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition:
+        background var(--transition-base),
+        transform var(--transition-fast),
+        box-shadow var(--transition-base);
+    text-decoration: none;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, hsl(var(--color-accent-purple)), hsl(var(--color-accent-blue)));
+    color: hsl(var(--color-text-primary));
+    box-shadow: var(--shadow-md), var(--glow-purple);
+}
+
+.btn-primary:hover {
+    box-shadow: var(--shadow-lg), var(--glow-purple);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid hsl(var(--color-border-default));
+    color: hsl(var(--color-text-primary));
+}
+
+.btn-outline:hover {
+    background: hsl(var(--color-bg-elevated));
+    border-color: hsl(var(--color-accent-purple));
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes floatSlow {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-float {
+    animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* ============================================
+   GRID & LAYOUT
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.section {
+    padding: var(--spacing-4xl) 0;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav-link {
+    position: relative;
+    color: hsl(var(--color-text-secondary));
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: color var(--transition-base);
+    font-weight: 500;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--color-accent-purple)), hsl(var(--color-accent-blue)));
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover {
+    color: hsl(var(--color-text-primary));
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--spacing-md);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: var(--spacing-md);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    padding: 0.2em 0.4em;
+    background: hsl(var(--color-bg-elevated));
+    border-radius: var(--radius-sm);
+    border: 1px solid hsl(var(--color-border-subtle));
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.text-gradient-purple {
+    background: linear-gradient(135deg, hsl(var(--color-accent-purple)), hsl(var(--color-accent-pink)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+    background: linear-gradient(135deg, hsl(var(--color-accent-blue)), hsl(var(--color-accent-cyan)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glow-border {
+    position: relative;
+}
+
+.glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, hsl(var(--color-accent-purple)), hsl(var(--color-accent-blue)));
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    z-index: -1;
+}
+
+.glow-border:hover::before {
+    opacity: 0.5;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .section {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .grid-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--color-bg-secondary));
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--color-bg-elevated));
+    border-radius: var(--radius-full);
+    border: 2px solid hsl(var(--color-bg-secondary));
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--color-border-default));
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+::selection {
+    background: hsla(var(--color-accent-purple), 0.3);
+    color: hsl(var(--color-text-primary));
+}
+
+::-moz-selection {
+    background: hsla(var(--color-accent-purple), 0.3);
+    color: hsl(var(--color-text-primary));
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+.skeleton {
+    background: linear-gradient(90deg,
+            hsl(var(--color-bg-secondary)) 0%,
+            hsl(var(--color-bg-elevated)) 50%,
+            hsl(var(--color-bg-secondary)) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
